@@ -13,7 +13,7 @@
     </Target>
 
     <Target Name="Test">
-        <Exec Command="dotnet test Tests" />
+        <Exec Command="dotnet test" WorkingDirectory="$(Solution).Tests" />
     </Target>
 
     <Target Name="Run">

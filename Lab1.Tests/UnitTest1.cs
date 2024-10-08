@@ -9,6 +9,7 @@ namespace Lab1.Tests
             var result = Program.CalculatePrimeDivisorCounts(values);
             Assert.Single(result);
             Assert.Equal(3, result[0]);
+            Console.WriteLine($"TestCalc_ValidNumberWithPrimeDivisors: {result[0]}");
         }
 
         [Fact]
@@ -18,6 +19,7 @@ namespace Lab1.Tests
             var result = Program.CalculatePrimeDivisorCounts(values);
             Assert.Single(result);
             Assert.Equal(0, result[0]);
+            Console.WriteLine($"TestCalc_ValidNumberWithNoPrimeDivisors: {result[0]}");
         }
 
         [Fact]
@@ -27,6 +29,7 @@ namespace Lab1.Tests
             var result = Program.CalculatePrimeDivisorCounts(values);
             Assert.Single(result);
             Assert.Equal(1, result[0]);
+            Console.WriteLine($"TestCalc_PrimeNumber: {result[0]}");
         }
 
         [Fact]
@@ -36,6 +39,7 @@ namespace Lab1.Tests
             var result = Program.CalculatePrimeDivisorCounts(values);
             Assert.Single(result);
             Assert.Equal(2, result[0]);
+            Console.WriteLine($"TestCalc_LargeCompositeNumber: {result[0]}");
         }
 
         [Fact]
@@ -47,6 +51,7 @@ namespace Lab1.Tests
             Assert.Equal(2, result[0]);
             Assert.Equal(2, result[1]);
             Assert.Equal(2, result[2]);
+            Console.WriteLine($"TestCalc_MultipleNumbers: {string.Join(", ", result)}");
         }
 
         [Fact]
@@ -56,6 +61,7 @@ namespace Lab1.Tests
             var result = Program.CalculatePrimeDivisorCounts(values);
             Assert.Single(result);
             Assert.Equal(3, result[0]);
+            Console.WriteLine($"TestCalc_NegativeNumber: {result[0]}");
         }
 
         [Fact]
@@ -65,6 +71,7 @@ namespace Lab1.Tests
             var result = Program.CalculatePrimeDivisorCounts(values);
             Assert.Single(result);
             Assert.Equal(1, result[0]);
+            Console.WriteLine($"TestCalc_LargePrimeNumber: {result[0]}");
         }
 
         [Fact]
@@ -73,6 +80,7 @@ namespace Lab1.Tests
             var values = new List<int>();
             var result = Program.CalculatePrimeDivisorCounts(values);
             Assert.Empty(result);
+            Console.WriteLine($"TestCalc_EmptyList: {result.Count}");
         }
 
         [Fact]
@@ -82,6 +90,7 @@ namespace Lab1.Tests
             var result = Program.CalculatePrimeDivisorCounts(values);
             Assert.Equal(3, result.Count);
             Assert.All(result, count => Assert.Equal(2, count));
+            Console.WriteLine($"TestCalc_MultipleNumbersWithRepeats: {string.Join(", ", result)}");
         }
     }
 }
