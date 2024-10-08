@@ -1,4 +1,11 @@
-# CrossPlatformProgramming
+# CrossPlatformLabs
+
+## Installation
+1. Clone project
+2. Install **dotnet sdk**
+3. Build project
+
+## Usage
 
 ### Build
 ```bash
