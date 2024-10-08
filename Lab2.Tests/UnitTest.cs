@@ -1,6 +1,6 @@
 namespace Lab2.Tests;
 
-public class UnitTest1
+public class UnitTest
 {
     [Theory]
     [InlineData(6, 1, "reactor", 15)]

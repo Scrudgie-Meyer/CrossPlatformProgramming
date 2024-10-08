@@ -1,4 +1,4 @@
-namespace Shared.FileWorkers;
+namespace Shared.FileLoaders;
 
 public class FileWriter(string path)
 {
@@ -9,7 +9,7 @@ public class FileWriter(string path)
             File.Create(path).Close();
         }
         using var streamWriter = new StreamWriter(path);
-        
+
         streamWriter.WriteLine(line);
     }
     public void WriteLines(List<string> lines)

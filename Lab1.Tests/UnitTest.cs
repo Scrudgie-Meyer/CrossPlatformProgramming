@@ -1,6 +1,6 @@
 namespace Lab1.Tests
 {
-    public class UnitTest1
+    public class UnitTest
     {
         [Fact]
         public void TestCalc_ValidNumberWithPrimeDivisors()

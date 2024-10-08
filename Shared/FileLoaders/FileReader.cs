@@ -1,4 +1,4 @@
-namespace Shared.FileWorkers;
+namespace Shared.FileLoaders;
 
 public class FileReader(string path)
 {
@@ -12,7 +12,7 @@ public class FileReader(string path)
         var lines = new List<string?>();
         using var streamReader = new StreamReader(path);
 
-        while (streamReader.ReadLine() is {} line)
+        while (streamReader.ReadLine() is { } line)
         {
             lines.Add(line);
         }
