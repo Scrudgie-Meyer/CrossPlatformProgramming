@@ -5,3 +5,4 @@ CrossPlatformLabs.sln.DotSettings.user
 /.vs
 /obj
 /Tests/.vs/CrossPlatformLabs
+/.vagrant

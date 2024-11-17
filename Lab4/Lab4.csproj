@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
   
 	<PackAsTool>true</PackAsTool>
-	<Version>0.01</Version>
+	<Version>0.1.0</Version>
 	<Authors>Volodymyr Petrash IPZ-31</Authors>
 	<ToolCommandName>Lab4</ToolCommandName>
 	<PackageId>VPetrash</PackageId>
