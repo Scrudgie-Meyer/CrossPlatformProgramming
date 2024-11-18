@@ -1,3 +1,4 @@
+namespace Lab2.Util;
 public class Parser
 {
     public List<int> N { get; private set; } = new List<int>();  // Store multiple N values
