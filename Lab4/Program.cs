@@ -26,7 +26,7 @@ class VersionCommand
 {
     private void OnExecute()
     {
-        Console.WriteLine("Author: Петраш Володимир ІПЗ-32");
+        Console.WriteLine("Author: Петраш Володимир ІПЗ-31");
         Console.WriteLine("Version: 0.1.0");
     }
 }
@@ -46,8 +46,8 @@ class RunCommand
     {
         try
         {
-            var labExecutor = new LabExecutor(Lab, FindPath(InputPath, "input.txt"),
-                FindPath(OutputPath, "output.txt"));
+            var labExecutor = new LabExecutor(Lab, FindPath(InputPath, "INPUT.txt"),
+                FindPath(OutputPath, "OUTPUT.txt"));
             labExecutor.Execute();
         }
         catch (Exception ex)
