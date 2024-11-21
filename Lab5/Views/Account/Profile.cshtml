@@ -1,0 +1,29 @@
+@model Lab5.Models.ProfileModel
+
+<div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+    <h2 style="text-align: center; color: #333; margin-bottom: 20px;">Profile Information</h2>
+
+    <!-- Username -->
+    <div style="margin-bottom: 15px;">
+        <label for="Username" style="font-weight: bold; color: #555;">Username: </label>
+        <b style="color: #333;">@Model.Username</b>
+    </div>
+
+    <!-- Full Name -->
+    <div style="margin-bottom: 15px;">
+        <label for="FullName" style="font-weight: bold; color: #555;">Full Name: </label>
+        <b style="color: #333;">@Model.FullName</b>
+    </div>
+
+    <!-- Phone -->
+    <div style="margin-bottom: 15px;">
+        <label for="Phone" style="font-weight: bold; color: #555;">Phone: </label>
+        <b style="color: #333;">@Model.Phone</b>
+    </div>
+
+    <!-- Email -->
+    <div style="margin-bottom: 15px;">
+        <label for="Email" style="font-weight: bold; color: #555;">Email: </label>
+        <b style="color: #333;">@Model.Email</b>
+    </div>
+</div>

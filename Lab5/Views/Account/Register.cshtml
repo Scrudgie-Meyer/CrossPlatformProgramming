@@ -1,0 +1,56 @@
+@model Lab5.Models.RegisterModel
+
+<div style="max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+    <h2 style="text-align: center; color: #333; margin-bottom: 20px;">Registration Form</h2>
+
+    <form method="post" asp-controller="Account" asp-action="Register">
+        <!-- Username -->
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="Username" style="font-weight: bold; color: #555;">Username (max. 50 characters)</label>
+            <input type="text" id="Username" name="Username" class="form-control" value="@Model.Username" style="padding: 10px;" />
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Username)</span>
+        </div>
+
+        <!-- Full Name -->
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="FullName" style="font-weight: bold; color: #555;">Full Name (max. 500 characters)</label>
+            <input type="text" id="FullName" name="FullName" class="form-control" value="@Model.FullName" style="padding: 10px;" />
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.FullName)</span>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="Password" style="font-weight: bold; color: #555;">Password (minimum 8 characters, 1 digit, 1 special character, 1 uppercase letter)</label>
+            <input type="password" id="Password" name="Password" class="form-control" value="@Model.Password" style="padding: 10px;" />
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Password)</span>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="ConfirmPassword" style="font-weight: bold; color: #555;">Confirm Password</label>
+            <input type="password" id="ConfirmPassword" name="ConfirmPassword" class="form-control" value="@Model.ConfirmPassword" style="padding: 10px;" />
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.ConfirmPassword)</span>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="Phone" style="font-weight: bold; color: #555;">Phone (Ukraine format)</label>
+            <input type="text" id="Phone" name="Phone" class="form-control" value="@Model.Phone" style="padding: 10px;" />
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Phone)</span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="Email" style="font-weight: bold; color: #555;">Email</label>
+            <input type="email" id="Email" name="Email" class="form-control" value="@Model.Email" style="padding: 10px;" />
+            <span class="text-danger">@Html.ValidationMessageFor(m => m.Email)</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 10px;">Register</button>
+    </form>
+</div>
+
+<!-- Validation Scripts -->
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+    }

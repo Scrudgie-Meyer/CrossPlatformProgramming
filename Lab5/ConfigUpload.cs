@@ -4,10 +4,13 @@
     {
         public static string? ClientId;
         public static string? ClientSecret;
-        public static void Load(IConfiguration configuration)
+        public static void LoadFromEnvironment()
         {
-            ClientId = configuration.GetSection("google").GetSection("id").Get<string>();
-            ClientSecret = configuration.GetSection("google").GetSection("secret").Get<string>();
+            ClientId = Environment.GetEnvironmentVariable("GOOGLE_CLIENT_ID")
+                       ?? throw new InvalidOperationException("Environment variable GOOGLE_CLIENT_ID is not set.");
+
+            ClientSecret = Environment.GetEnvironmentVariable("GOOGLE_CLIENT_SECRET")
+                           ?? throw new InvalidOperationException("Environment variable GOOGLE_CLIENT_SECRET is not set.");
         }
     }
 }
