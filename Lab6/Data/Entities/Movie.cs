@@ -2,6 +2,7 @@ namespace Lab6.Data.Entities;
 
 public class Movie
 {
+    public int Id { get; set; }
     public int MovieId { get; set; }
     public string MovieTitle { get; set; }
     public decimal MovieRentalDailyRate { get; set; }

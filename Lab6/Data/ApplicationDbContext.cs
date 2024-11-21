@@ -7,6 +7,7 @@ public class ApplicationDbContext : DbContext
     {
     }
 
+    public string ConnectionString { get; set; }
     public DbSet<InventoryItemType> InventoryItemTypes { get; set; }
     public DbSet<Inventory> Inventories { get; set; }
     public DbSet<Movie> Movies { get; set; }
@@ -17,6 +18,13 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
+        // Визначаємо первинний ключ для Inventory
+        modelBuilder.Entity<Inventory>().HasKey(i => i.InventoryItemId);
+        modelBuilder.Entity<CustomerGameRental>().HasKey(cgr => cgr.Id);
+
+
         // InventoryItemType
         modelBuilder.Entity<InventoryItemType>().HasData(
             new InventoryItemType { InventoryItemTypeId = 1, InventoryItemTypeDescription = "DVD" },
@@ -34,14 +42,14 @@ public class ApplicationDbContext : DbContext
 
         // Movie
         modelBuilder.Entity<Movie>().HasData(
-            new Movie { MovieId = 1, MovieTitle = "Inception", MovieRentalDailyRate = 1.99m, MovieNumberInStock = 10 },
-            new Movie { MovieId = 2, MovieTitle = "The Matrix", MovieRentalDailyRate = 2.49m, MovieNumberInStock = 5 }
+            new Movie { Id = 1, MovieId = 1, MovieTitle = "Inception", MovieRentalDailyRate = 1.99m, MovieNumberInStock = 10 },
+            new Movie { Id = 2, MovieId = 2, MovieTitle = "The Matrix", MovieRentalDailyRate = 2.49m, MovieNumberInStock = 5 }
         );
 
         // Game
         modelBuilder.Entity<Game>().HasData(
-            new Game { GameId = 1, GameTitle = "Halo", GameRentalDailyRate = 3.99m, GameNumberInStock = 7 },
-            new Game { GameId = 2, GameTitle = "FIFA", GameRentalDailyRate = 2.99m, GameNumberInStock = 3 }
+            new Game { Id = 1, GameId = 1, GameTitle = "Halo", GameRentalDailyRate = 3.99m, GameNumberInStock = 7 },
+            new Game { Id = 2, GameId = 2, GameTitle = "FIFA", GameRentalDailyRate = 2.99m, GameNumberInStock = 3 }
         );
 
         // Customer
@@ -52,14 +60,14 @@ public class ApplicationDbContext : DbContext
 
         // CustomerMovieRentals
         modelBuilder.Entity<CustomerMovieRental>().HasData(
-            new CustomerMovieRental { CustomerId = 1, MovieId = 1, RentalDateOut = DateTime.Now.AddDays(-5), RentalDateReturned = DateTime.Now.AddDays(-2), RentalAmountDue = 4.99m },
-            new CustomerMovieRental { CustomerId = 2, MovieId = 2, RentalDateOut = DateTime.Now.AddDays(-3), RentalDateReturned = DateTime.Now.AddDays(-1), RentalAmountDue = 6.99m }
+            new CustomerMovieRental { Id = 1, CustomerId = 1, MovieId = 1, RentalDateOut = DateTime.Now.AddDays(-5), RentalDateReturned = DateTime.Now.AddDays(-2), RentalAmountDue = 4.99m },
+            new CustomerMovieRental { Id = 2, CustomerId = 2, MovieId = 2, RentalDateOut = DateTime.Now.AddDays(-3), RentalDateReturned = DateTime.Now.AddDays(-1), RentalAmountDue = 6.99m }
         );
 
         // CustomerGameRentals
         modelBuilder.Entity<CustomerGameRental>().HasData(
-            new CustomerGameRental { CustomerId = 1, GameId = 1, RentalDateOut = DateTime.Now.AddDays(-10), RentalDateReturned = DateTime.Now.AddDays(-7), RentalAmountDue = 9.99m },
-            new CustomerGameRental { CustomerId = 2, GameId = 2, RentalDateOut = DateTime.Now.AddDays(-2), RentalDateReturned = DateTime.Now.AddDays(-1), RentalAmountDue = 5.99m }
+            new CustomerGameRental { Id = 1, CustomerId = 1, GameId = 1, RentalDateOut = DateTime.Now.AddDays(-10), RentalDateReturned = DateTime.Now.AddDays(-7), RentalAmountDue = 9.99m },
+            new CustomerGameRental { Id = 2, CustomerId = 2, GameId = 2, RentalDateOut = DateTime.Now.AddDays(-2), RentalDateReturned = DateTime.Now.AddDays(-1), RentalAmountDue = 5.99m }
         );
 
         base.OnModelCreating(modelBuilder);

@@ -2,10 +2,11 @@
 
 public class CustomerGameRental
 {
+    public int Id { get; set; }
     public int CustomerId { get; set; }
     public int GameId { get; set; }
     public DateTime RentalDateOut { get; set; }
-    public DateTime RentalDateReturned { get; set; }
+    public DateTime? RentalDateReturned { get; set; }
     public decimal RentalAmountDue { get; set; }
 
     public Customer Customer { get; set; }
