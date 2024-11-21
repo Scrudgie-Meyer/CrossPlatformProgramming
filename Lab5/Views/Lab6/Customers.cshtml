@@ -1,0 +1,22 @@
+﻿@model List<Lab5.Models.CustomerViewModel>
+
+<h1>Customers</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.CustomerId</td>
+                <td>@customer.CustomerName</td>
+                <td>@customer.CustomerAddress</td>
+            </tr>
+        }
+    </tbody>
+</table>

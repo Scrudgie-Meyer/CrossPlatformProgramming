@@ -1,0 +1,13 @@
+﻿@model Lab5.Models.MovieRentalViewModel
+
+<h1>Movie Rental Details</h1>
+
+<div>
+    <p><strong>ID:</strong> @Model.Id</p>
+    <p><strong>Customer Name:</strong> @Model.CustomerName</p>
+    <p><strong>Movie Title:</strong> @Model.MovieTitle</p>
+    <p><strong>Rental Date Out:</strong> @Model.RentalDateOut.ToShortDateString()</p>
+    <p><strong>Amount Due:</strong> @Model.RentalAmountDue.ToString("C")</p>
+</div>
+
+<a href="/Rental/MovieRentals">Back to Rentals List</a>

@@ -1,0 +1,36 @@
+﻿@model List<Lab5.Models.MovieRentalViewModel>
+
+<h1>Search Results</h1>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No results found.</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Customer Name</th>
+                <th>Movie Title</th>
+                <th>Rental Date Out</th>
+                <th>Amount Due</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rental in Model)
+            {
+                <tr>
+                    <td>@rental.Id</td>
+                    <td>@rental.CustomerName</td>
+                    <td>@rental.MovieTitle</td>
+                    <td>@rental.RentalDateOut.ToShortDateString()</td>
+                    <td>@rental.RentalAmountDue.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<a href="Home/Index">Back to Home</a>
